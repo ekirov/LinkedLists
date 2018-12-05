@@ -252,10 +252,14 @@ SinglyLinkedListNode *multiplyListsSimple(SinglyLinkedListNode *h1, SinglyLinked
 			h2 = h2->next;
 		}
 	}
-	int mul = n1*n2;
-	SinglyLinkedListNode *res = new SinglyLinkedListNode(NULL);
-	return res;
-	//needs to be completed
+	int product = n1*n2;
+	string product_str = to_string(product);
+	SinglyLinkedList *result = new SinglyLinkedList();
+	for (int i = 0; i < product_str.length(); i++){
+		result->insert_node(product_str[i] - '0');
+	}
+
+	return result->head;
 	
 }
 
